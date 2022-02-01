@@ -1,6 +1,6 @@
 
-const listPokemon = document.querySelector('#charactersList');
-const pokemon_number = 2;
+const listPokemon = document.querySelector('#pokemon');
+const pokemon_number = 200;
 
 
 const loadPokemon = async(id) =>  {
@@ -8,7 +8,7 @@ const loadPokemon = async(id) =>  {
     try {
         const res = await fetch (`https://pokeapi.co/api/v2/pokemon/${id}`);
         let data  = await res.json();
-        console.log(data)
+        // console.log(data)
         createPokemon(data)
 
     }catch(err){console.error(err)}
@@ -22,8 +22,13 @@ const loadPokemon = async(id) =>  {
 
 
 
-const createPokemon = (pokemon) => {
-    // e = pokemon;
-    listPokemon.innerHTML += `<li>${pokemon.name}</li>`
+const createPokemon = (data) => {
+  
+    listPokemon.innerHTML += `
+            <li class="character">
+            <h2>${data.species.name}</h2>
+            <p>Type: ${data.types[0].type.name}</p>
+            <img src="${data.sprites.front_default}"></img>
+        </li>`
 }
 displayPokemon();

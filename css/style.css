@@ -33,7 +33,7 @@ h1 {
     grid-template-columns: 3fr 1fr;
     grid-template-areas:
         'name image'
-        'house image';
+        'type image';
     text-align: left;
 }
 
@@ -43,7 +43,7 @@ h1 {
 }
 
 .character > p {
-    grid-area: house;
+    grid-area: type;
     margin: 0;
     margin-top: -18px;
 }
@@ -51,6 +51,7 @@ h1 {
 .character > img {
     max-height: 100px;
     grid-area: image;
+    width: 100%;
 }
 
 #searchBar {
