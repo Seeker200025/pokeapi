@@ -21,7 +21,6 @@ const loadPokemon = async(id) =>  {
 }; 
 
 
-
 const createPokemon = (data) => {
   
     listPokemon.innerHTML += `
@@ -55,3 +54,13 @@ const searchPokemon = (letters, el) =>{
         }
     }
 }
+
+
+
+window.addEventListener("load", () =>{
+      setTimeout(() => {
+        const loader = document.querySelector('.loader');
+        
+        loader.style.display = 'none';
+    }, 3000);
+});
